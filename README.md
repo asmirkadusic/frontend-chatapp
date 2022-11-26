@@ -1,56 +1,15 @@
-# frontend-chatapp
+This file is part of frontend-chatapp project. This project is part of final project which I have for my homework in course Data Engineering and Distributed Information Systems. 
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+Application will have a few behaviors. 
+First, application will have login and register form.
+This part is currently in development stage and it will be done soon.
 
-## Prerequisites
+After I implement login and register forms, I will continue working on chat between two persons. This will be the main part of application. I didn't find out how I will implement this. I have a few ideas but I didn't decide yet. 
 
-You will need the following things properly installed on your computer.
+Also, application should have some kind of group chat. For this part it is same as a chat between just two persons.
 
-* [Git](https://git-scm.com/)
-* [Node.js](https://nodejs.org/) (with npm)
-* [Ember CLI](https://cli.emberjs.com/release/)
-* [Google Chrome](https://google.com/chrome/)
+This is main idea. So frontend will care out about client side part.
 
-## Installation
+For this part I will use Ember.js framework. 
 
-* `git clone <repository-url>` this repository
-* `cd frontend-chatapp`
-* `npm install`
-
-## Running / Development
-
-* `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
-* Visit your tests at [http://localhost:4200/tests](http://localhost:4200/tests).
-
-### Code Generators
-
-Make use of the many generators for code, try `ember help generate` for more details
-
-### Running Tests
-
-* `ember test`
-* `ember test --server`
-
-### Linting
-
-* `npm run lint`
-* `npm run lint:fix`
-
-### Building
-
-* `ember build` (development)
-* `ember build --environment production` (production)
-
-### Deploying
-
-Specify what it takes to deploy your app.
-
-## Further Reading / Useful Links
-
-* [ember.js](https://emberjs.com/)
-* [ember-cli](https://cli.emberjs.com/release/)
-* Development Browser Extensions
-  * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
-  * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
+For building, installing and deploying I will update it during my progress.
