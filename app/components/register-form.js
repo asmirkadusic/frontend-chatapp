@@ -1,28 +1,28 @@
 import Component from '@glimmer/component';
-import { action } from '@ember/object'
+import { action } from '@ember/object';
+import { inject as service } from '@ember/service';
 import { tracked } from '@glimmer/tracking';
 
 export default class RegisterFormComponent extends Component {
-    @tracked swtichers = document.getElementsByClassName('switcher');
-    
-    @action
-    showLoginOrRegister(){
-        // this.switchers.item(0).parentElement.classList.remove('is-active');
-        // this.switchers.item(1).parentElement.classList.add('is-active');
-        for (let i = 0; i < this.swtichers.length; i++){
-            if (!this.swtichers.item(i).parentElement.classList.contains('is-active')){
-                this.swtichers.item(i).parentElement.classList.add('is-active');
-                this.hideLoginOrRegister();
-            }
-        }
-    }
-    
-    @action
-    hideLoginOrRegister(){
-        for (let i = 0; i < this.swtichers.length; i++){
-            if(this.swtichers.item(i).parentElement.classList.contains('is-active')){
-                this.swtichers.item(i).parentElement.classList.remove('is-active');
-            }
-        }
-    }
+  @service login;
+  @service store;
+
+  @tracked emailValue = '';
+  @tracked passwordValue = '';
+
+  @action
+  storeEmail(event) {
+    this.emailValue = event.target.value;
+  }
+
+  @action
+  storePassword(event) {
+    this.passwordValue = event.target.value;
+  }
+
+  @action
+  storeToUsers() {
+    this.login.addNewUser(this.emailValue, this.passwordValue);
+    this.login.printAllUsers();
+  }
 }
