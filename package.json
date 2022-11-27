@@ -66,5 +66,9 @@
   },
   "ember": {
     "edition": "octane"
+  },
+  "dependencies": {
+    "auth0-js": "^9.19.2",
+    "ember-simple-auth": "^4.2.2"
   }
 }

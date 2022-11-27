@@ -1,4 +1,5 @@
 import Service from '@ember/service';
+<<<<<<< HEAD
 import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object';
 import UserModel from '../models/user';
@@ -19,4 +20,11 @@ export default class LoginService extends Service {
   printAllUsers() {
     console.log(this.allLoggedInUsers);
   }
+=======
+
+export default class LoginService extends Service {
+    users = [];
+
+    
+>>>>>>> 8a0bc77da93889c571b66d39fa842ca3a52a233e
 }
