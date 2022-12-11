@@ -24,5 +24,11 @@ export default class RegisterFormComponent extends Component {
   storeToUsers() {
     this.login.addNewUser(this.emailValue, this.passwordValue);
     this.login.printAllUsers();
+    this.login.getUsers();
+    let varijabla = this.store.createRecord('user', {
+      email: "Samsung",
+      password: "S10"
+    });
+    varijabla.save();
   }
 }
