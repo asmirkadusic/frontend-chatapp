@@ -13,6 +13,16 @@ export default class LoginService extends Service {
   addNewUser({ email, password }) {
     let user = new UserModel(email, password);
     this.allLoggedInUsers.push(user);
+    fetch("/user").then((data) => {
+      this.allLoggedInUsers.push;
+    });
+  }
+
+  @action
+  getUsers(){
+    fetch("/user").then((data) => {
+      console.log(data);
+    })
   }
 
   @action
