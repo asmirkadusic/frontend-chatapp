@@ -4,7 +4,7 @@ import { inject as service } from '@ember/service';
 import { tracked } from '@glimmer/tracking';
 
 export default class RegisterFormComponent extends Component {
-  @service login;
+  @service register;
   @service store;
 
   @tracked emailValue = '';
@@ -22,13 +22,9 @@ export default class RegisterFormComponent extends Component {
 
   @action
   storeToUsers() {
-    this.login.addNewUser(this.emailValue, this.passwordValue);
-    this.login.printAllUsers();
-    this.login.getUsers();
-    let varijabla = this.store.createRecord('user', {
-      email: "Samsung",
-      password: "S10"
-    });
-    varijabla.save();
+    this.register.addNewUser(this.emailValue, this.passwordValue);
+    this.register.printAllUsers();
+    // ova linija koda povlaci sve usere iz baze podataka
+    this.register.getUsers();
   }
 }
