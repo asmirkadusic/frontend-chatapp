@@ -20,7 +20,7 @@ export default class LoginComponent extends Component {
   }
 
   @action
-  loginUser(){
+  loginUser() {
     this.login.checkUser(this.email, this.password);
   }
 }

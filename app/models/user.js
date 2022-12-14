@@ -5,11 +5,11 @@ export default class UserModel extends Model {
   @attr('string') email;
   @attr('string') password;
 
-  getEmail(){
+  getEmail() {
     return this.email;
   }
 
-  getPassword(){
+  getPassword() {
     return this.password;
   }
 }
