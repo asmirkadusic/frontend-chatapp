@@ -6,6 +6,7 @@ import { tracked } from '@glimmer/tracking';
 export default class RegisterFormComponent extends Component {
   @service register;
   @service store;
+  @service router;
 
   @tracked emailValue = '';
   @tracked passwordValue = '';
@@ -23,8 +24,6 @@ export default class RegisterFormComponent extends Component {
   @action
   storeToUsers() {
     this.register.addNewUser(this.emailValue, this.passwordValue);
-    this.register.printAllUsers();
-    // ova linija koda povlaci sve usere iz baze podataka
-    this.register.getUsers();
+    this.router.transitionTo('chats');
   }
 }

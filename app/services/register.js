@@ -10,15 +10,6 @@ export default class LoginService extends Service {
   ];
 
   @action
-  addNewUser({ email, password }) {
-    let user = new UserModel(email, password);
-    this.allLoggedInUsers.push(user);
-    fetch('/user').then((data) => {
-      this.allLoggedInUsers.push;
-    });
-  }
-
-  @action
   getUsers() {
     fetch('/user').then((data) => {
       console.log(data);
@@ -28,5 +19,23 @@ export default class LoginService extends Service {
   @action
   printAllUsers() {
     console.log(this.allLoggedInUsers);
+  }
+
+  @action
+  addNewUser(email, password) {
+    let User = new UserModel(email, password);
+    let data = { user: { email: email, password: password } };
+    let usersDatabase = fetch('/registration', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    }).then((res) => {
+      console.log('Request complete! Response: ', res);
+    });
+  }
+
+  @action
+  redirectToPage(pathToRedirection) {
+    this.router.transitionTo(pathToRedirection);
   }
 }
