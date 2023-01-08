@@ -7,6 +7,8 @@ export default class RegisterFormComponent extends Component {
   @service register;
   @service store;
   @service router;
+  @service('websockets') websockets;
+  socketRef = null;
 
   @tracked emailValue = '';
   @tracked passwordValue = '';
@@ -25,5 +27,18 @@ export default class RegisterFormComponent extends Component {
   storeToUsers() {
     this.register.addNewUser(this.emailValue, this.passwordValue);
     this.router.transitionTo('chats');
+    this.openWebSocketConnection();
+  }
+
+  @action
+  openWebSocketConnection() {
+    const socket = this.websockets.socketFor('wss://localhost:7000/');
+
+    socket.on('open', this.onOpenedConnection, this);
+  }
+
+  @action
+  onOpenedConnection() {
+    console.log('WebSocketConnection opened.');
   }
 }

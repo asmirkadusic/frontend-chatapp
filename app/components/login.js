@@ -5,14 +5,10 @@ import { tracked } from '@glimmer/tracking';
 
 export default class LoginComponent extends Component {
   @service login;
+  @service router;
 
   @tracked email = '';
   @tracked password = '';
-
-  @action
-  storeEmail(event) {
-    this.email = event.target.value;
-  }
 
   @action
   storePassword(event) {
@@ -22,5 +18,7 @@ export default class LoginComponent extends Component {
   @action
   loginUser() {
     this.login.checkUser(this.email, this.password);
+    this.router.transitionTo('chats');
+    this.login.setUpWebSocketConnection();
   }
 }
